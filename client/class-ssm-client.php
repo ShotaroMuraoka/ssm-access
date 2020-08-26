@@ -4,8 +4,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-//require dirname( __FILE__ ) . '../vendor/autoload.php';
-
 use Aws\Ssm\SsmClient;
 use Aws\Ssm\Exception\SsmException;
 

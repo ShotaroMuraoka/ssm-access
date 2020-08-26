@@ -2,10 +2,12 @@
 /*
 Plugin Name: SSM Parameter Store Access
 Plugin URI:
-Description: SSMパラメータストアにアクセスできるようにするプラグイン.
-Version: 0.0.1
-Author:
+Description: A plugin that gives you access to the SSM parameter store.
+Version: 1.0.0
+Author: muraokashotaro
 Author URI:
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -58,13 +60,12 @@ class Ssm_Access {
 		require $dirname . '/vendor/autoload.php';
 		require $dirname . '/client/class-ssm-client.php';
 
-		add_action( 'admin_init', [ $this, 'test_init' ], 10 );
+		add_action( 'admin_init', array( $this, 'test_init' ), 10 );
 	}
 
 	// SSMクライアントでテストしてみる.
 	public function test_init() {
 		$test = new Ssm_Client();
-//		var_dump( $test->get_parameter( 'backlog-build-ssh-key' ) );
 	}
 }
 
